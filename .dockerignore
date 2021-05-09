@@ -1,0 +1,9 @@
+
+*.pyc
+*.pyo
+.git/
+__pycache__
+Dockerfile
+Tiltfile
+tilt*
+kubernetes.yaml

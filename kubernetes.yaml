@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tilt-deploy
+  labels:
+    app: tilt-deploy
+spec:
+  selector:
+    matchLabels:
+      app: tilt-deploy
+  template:
+    metadata:
+      labels:
+        app: tilt-deploy
+    spec:
+      containers:
+        - name: tilt-deploy
+          image:  tilt-demo  # Change the image
+          ports:
+            - containerPort: 8000
+      imagePullSecrets:
+      - name: dockercreds
