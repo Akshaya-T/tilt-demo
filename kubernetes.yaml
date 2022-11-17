@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: test
 kind: Deployment
 metadata:
   name: tilt-deploy
@@ -14,9 +14,9 @@ spec:
         app: tilt-deploy
     spec:
       containers:
-        - name: tilt-deploy
-          image:  tilt-demo  # Change the image
-          ports:
-            - containerPort: 8000
+      - name: tilt-deploy
+        image: tilt-demo     # Change the image
+        ports:
+        - containerPort: 8000
       imagePullSecrets:
       - name: dockercreds
